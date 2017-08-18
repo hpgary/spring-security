@@ -1,6 +1,5 @@
 # maven #
 target
-application.properties
 # eclipse #
 .settings
 .project
