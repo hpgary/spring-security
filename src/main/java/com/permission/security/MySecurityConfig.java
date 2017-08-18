@@ -34,7 +34,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
     	
     	http.authorizeRequests().anyRequest().authenticated().and().formLogin() ;
     	http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()) ;
-    	
+    	http.headers().frameOptions().sameOrigin();
         //这里的定义为任何请求都要拦截，经过自定义的ObjectPostProcessor
         http.authorizeRequests().anyRequest().authenticated().withObjectPostProcessor(new ObjectPostProcessor<FilterSecurityInterceptor>() {
             public <O extends FilterSecurityInterceptor> O postProcess(O fsi) {
