@@ -17,17 +17,19 @@ MySQL - 5.5.53-log : Database - test
 DROP TABLE IF EXISTS `sys_privilege`;
 
 CREATE TABLE `sys_privilege` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) DEFAULT NULL,
-  `url` varchar(20) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '节点ID',
+  `pid` int(11) DEFAULT '0' COMMENT '父节点',
+  `name` varchar(20) DEFAULT NULL COMMENT '功能名',
+  `url` varchar(20) DEFAULT NULL COMMENT '访问URL',
+  `isEnable` tinyint(2) DEFAULT NULL COMMENT '是否启用',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 /*Data for the table `sys_privilege` */
 
-insert  into `sys_privilege`(`id`,`name`,`url`) values (1,'admin权限','/adminHello');
-insert  into `sys_privilege`(`id`,`name`,`url`) values (2,'sang权限','/sangHello');
-insert  into `sys_privilege`(`id`,`name`,`url`) values (3,'权限','/hello/list');
+insert  into `sys_privilege`(`id`,`pid`,`name`,`url`,`isEnable`) values (1,0,'admin权限','/adminHello',NULL);
+insert  into `sys_privilege`(`id`,`pid`,`name`,`url`,`isEnable`) values (2,0,'sang权限','/sangHello',NULL);
+insert  into `sys_privilege`(`id`,`pid`,`name`,`url`,`isEnable`) values (3,0,'权限','/hello/list',NULL);
 
 /*Table structure for table `sys_role` */
 
