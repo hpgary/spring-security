@@ -32,7 +32,7 @@ public class MyAccessDecisionManager implements AccessDecisionManager {
                 }
             }
         }
-        throw new AccessDeniedException("没有权限,拒绝访问!");
+        throw new AccessDeniedException("can not access");
     }
 
     @Override
