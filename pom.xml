@@ -56,4 +56,14 @@
 		    <version>5.0.2</version>
 		</dependency>
 	</dependencies>
+	
+	<build>
+		<finalName>security</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 </project>
